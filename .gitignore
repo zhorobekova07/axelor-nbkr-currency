@@ -45,3 +45,6 @@ hs_err_pid*
 
 # JavaScript
 node_modules
+
+# Sensitive configuration
+**/axelor-config.properties

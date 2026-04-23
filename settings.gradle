@@ -10,14 +10,14 @@ pluginManagement {
     }
   }
   plugins {
-    id 'com.axelor.app' version '6.1.7'
+    id 'com.axelor.app'        version '6.1.7'
+    id 'com.axelor.app.module' version '6.1.7'
   }
 }
 
 plugins {
   id 'com.github.node-gradle.node' version '3.5.1' apply false
 }
-
 
 dependencyResolutionManagement {
   repositories {
@@ -29,7 +29,6 @@ dependencyResolutionManagement {
     maven {
       url 'https://repository.axelor.com/nexus/repository/maven-public/'
     }
-    // Declare the Node.js download repository
     ivy {
       name = "Node.js"
       setUrl("https://nodejs.org/dist/")
@@ -46,7 +45,6 @@ dependencyResolutionManagement {
   }
 }
 
-//Include all modules
 rootProject.name = "axelor-erp"
 
 def modules = []
