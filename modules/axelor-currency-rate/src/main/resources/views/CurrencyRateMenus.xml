@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  https://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <menuitem name="menu-currency-root" title="Курсы валют" icon="fa-money" order="90"/>
+
+  <menuitem name="menu-currency-rate-list" title="Курсы валют НБКР"
+    parent="menu-currency-root" action="action-currency-rate-view" order="10"/>
+
+  <action-view name="action-currency-rate-view" title="Курсы валют НБКР"
+    model="com.axelor.apps.currency.db.CurrencyRate">
+    <view type="grid" name="currency-rate-grid"/>
+    <view type="form" name="currency-rate-form"/>
+  </action-view>
+
+</object-views>

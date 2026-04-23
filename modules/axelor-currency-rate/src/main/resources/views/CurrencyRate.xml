@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  https://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="currency-rate-grid" title="Курсы валют НБКР"
+    model="com.axelor.apps.currency.db.CurrencyRate" orderBy="-rateDate,code">
+    <toolbar>
+      <button name="btnFetchToday" title="Обновить курсы сегодня"
+        onClick="action-currency-rate-fetch-today" icon="fa-refresh"/>
+    </toolbar>
+    <field name="rateDate" title="Дата"/>
+    <field name="code" title="Код" width="80"/>
+    <field name="name" title="Наименование"/>
+    <field name="nominal" title="Номинал" width="80"/>
+    <field name="rate" title="Курс (KGS)" x-scale="4"/>
+  </grid>
+
+  <form name="currency-rate-form" title="Курс валюты"
+    model="com.axelor.apps.currency.db.CurrencyRate">
+    <panel title="Основные данные" colSpan="12">
+      <field name="rateDate" colSpan="4"/>
+      <field name="code" colSpan="4"/>
+      <field name="nominal" colSpan="4"/>
+      <field name="name" colSpan="8"/>
+      <field name="rate" colSpan="4" x-scale="6"/>
+    </panel>
+  </form>
+
+  <action-method name="action-currency-rate-fetch-today">
+    <call class="com.axelor.apps.currency.web.CurrencyRateController" method="fetchTodayRates"/>
+  </action-method>
+
+</object-views>
